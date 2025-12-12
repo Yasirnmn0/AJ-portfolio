@@ -1,16 +1,24 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+// --- 1. Import Poppins from Google Fonts ---
+import { Poppins } from "next/font/google";
+// --- 2. Import Geist fonts from their specific package ---
+// Note: The import path below is the official one for Geist
+import { GeistSans, GeistMono } from "geist/font";
+
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Use GeistSans directly from the import (it's already a configured object)
+const geistSans = GeistSans;
+
+// Define Poppins correctly (as it IS a Google Font)
+const poppins = Poppins({
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-poppins",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// Use GeistMono directly from the import
+const geistMono = GeistMono;
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,9 +31,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased `}
       >
         {children}
       </body>
