@@ -4,7 +4,7 @@ import { Poppins } from "next/font/google";
 // --- 2. Import Geist fonts from their specific package ---
 // Note: The import path below is the official one for Geist
 import { GeistSans, GeistMono } from "geist/font";
-
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
 // Use GeistSans directly from the import (it's already a configured object)
@@ -36,6 +36,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} antialiased `}
       >
         {children}
+        <Toaster position="top-right" />
       </body>
     </html>
   );

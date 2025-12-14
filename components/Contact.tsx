@@ -1,16 +1,46 @@
-import React from "react";
-import {
-  Phone,
-  Printer,
-  Mail,
-  Facebook,
-  Twitter,
-  Globe,
-  Linkedin,
-} from "lucide-react";
+"use client";
+
+import React, { useState } from "react";
+import { Phone, Mail, Globe, Linkedin, FacebookIcon } from "lucide-react";
+import toast from "react-hot-toast";
 
 export default function Contact() {
   const accentColorHex = "#20C997";
+
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const form = e.currentTarget;
+
+    const formData = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement)
+        .value,
+    };
+
+    const toastId = toast.loading("Sending message...");
+
+    try {
+      const res = await fetch("/Api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) throw new Error();
+
+      toast.success("Message sent successfully!", { id: toastId });
+      form.reset();
+    } catch {
+      toast.error("Failed to send message. Try again.", { id: toastId });
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <section id="contact" className="bg-gray-800 py-20 relative">
@@ -47,18 +77,18 @@ export default function Contact() {
               <p className="text-gray-400 mb-4">Pakistan</p>
 
               <div className="space-y-3">
-                <p className="flex items-center justify-center md:justify-start text-gray-400 hover:text-[#1CD7A8] transition-colors">
-                  <Phone size={20} className="text-[#1CD7A8] mr-2" />
+                <p className="flex items-center justify-center md:justify-start text-gray-400">
+                  <Phone size={20} className="text-[#20C997] mr-2" />
                   +92 322 4722040
                 </p>
 
-                <p className="flex items-center justify-center md:justify-start text-gray-400 hover:text-[#1CD7A8] transition-colors">
-                  <Mail size={20} className="text-[#1CD7A8] mr-2" />
+                <p className="flex items-center justify-center md:justify-start text-gray-400">
+                  <Mail size={20} className="text-[#20C997] mr-2" />
                   abdul@techrefi.com
                 </p>
 
-                <p className="flex items-center justify-center md:justify-start text-gray-400 hover:text-[#1CD7A8] transition-colors">
-                  <Globe size={20} className="text-[#1CD7A8] mr-2" />
+                <p className="flex items-center justify-center md:justify-start text-gray-400">
+                  <Globe size={20} className="text-[#20C997] mr-2" />
                   techrefi.com
                 </p>
               </div>
@@ -73,27 +103,29 @@ export default function Contact() {
               <div className="flex justify-center md:justify-start space-x-4 text-gray-400 text-xl">
                 <a
                   href="https://facebook.com"
-                  className="hover:text-[#1CD7A8] transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#20C997]"
                 >
-                  <Facebook size={24} />
+                  <FacebookIcon size={24} />
                 </a>
-                <a
-                  href="https://twitter.com"
-                  className="hover:text-[#1CD7A8] transition-colors"
-                >
-                  <Twitter size={24} />
-                </a>
-                <a
-                  href="https://techrefi.com"
-                  className="hover:text-[#1CD7A8] transition-colors"
-                >
-                  <Globe size={24} />
-                </a>
+
                 <a
                   href="https://linkedin.com/in/abdul-jabbar-sadiq"
-                  className="hover:text-[#1CD7A8] transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#20C997]"
                 >
                   <Linkedin size={24} />
+                </a>
+
+                <a
+                  href="https://techrefi.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#20C997]"
+                >
+                  <Globe size={24} />
                 </a>
               </div>
             </div>
@@ -105,35 +137,44 @@ export default function Contact() {
               Send me a message
             </h3>
 
-            <form className="space-y-4">
+            <form className="space-y-4" onSubmit={handleSubmit}>
               <div className="grid sm:grid-cols-2 gap-4">
                 <input
+                  name="name"
                   type="text"
                   placeholder="Name"
-                  className="w-full bg-gray-700 border border-gray-600 p-3 rounded text-white focus:ring-1 focus:ring-[#1CD7A8] focus:border-[#1CD7A8]"
+                  className="w-full bg-gray-700 border border-gray-600 p-3 rounded text-white
+                  focus:outline-none focus:ring-1 focus:ring-[#20C997] focus:border-[#20C997]"
                   required
                 />
+
                 <input
+                  name="email"
                   type="email"
                   placeholder="Email"
-                  className="w-full bg-gray-700 border border-gray-600 p-3 rounded text-white focus:ring-1 focus:ring-[#1CD7A8] focus:border-[#1CD7A8]"
+                  className="w-full bg-gray-700 border border-gray-600 p-3 rounded text-white
+                  focus:outline-none focus:ring-1 focus:ring-[#20C997] focus:border-[#20C997]"
                   required
                 />
               </div>
 
               <textarea
+                name="message"
                 placeholder="Tell me more about your project..."
                 rows={6}
-                className="w-full bg-gray-700 border border-gray-600 p-3 rounded text-white focus:ring-1 focus:ring-[#1CD7A8] focus:border-[#1CD7A8]"
+                className="w-full bg-gray-700 border border-gray-600 p-3 rounded text-white
+                focus:outline-none focus:ring-1 focus:ring-[#20C997] focus:border-[#20C997]"
                 required
               />
 
               <div className="text-center md:text-left">
                 <button
                   type="submit"
-                  className="px-8 py-3 rounded-full text-white font-medium uppercase transition-colors bg-[#20C997] hover:bg-gray-900"
+                  disabled={loading}
+                  className="px-8 py-3 rounded-full text-white font-medium uppercase
+                  bg-[#20C997] hover:bg-gray-900 disabled:opacity-50"
                 >
-                  Send Message
+                  {loading ? "Sending..." : "Send Message"}
                 </button>
               </div>
             </form>

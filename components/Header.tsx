@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Twitter, Facebook, Globe, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { FaFacebook, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 const navItems = [
   { name: "Home", href: "#home" },
@@ -71,20 +72,20 @@ export default function Header() {
         {/* Desktop Social Icons */}
         <div className="hidden lg:flex space-x-3 sm:space-x-4 md:space-x-5 text-white text-base sm:text-lg md:text-lg lg:text-xl xl:text-2xl">
           <a href="#" className={`hover:text-[${accentColorHex}]`}>
-            <Twitter
-              size={20}
+            <FaLinkedin
+              size={18}
               className="sm:scale-100 md:scale-110 lg:scale-125"
             />
           </a>
           <a href="#" className={`hover:text-[${accentColorHex}]`}>
-            <Facebook
-              size={20}
+            <FaFacebook
+              size={18}
               className="sm:scale-100 md:scale-110 lg:scale-125"
             />
           </a>
           <a href="#" className={`hover:text-[${accentColorHex}]`}>
-            <Globe
-              size={20}
+            <FaWhatsapp
+              size={18}
               className="sm:scale-100 md:scale-110 lg:scale-125"
             />
           </a>
@@ -124,10 +125,13 @@ export default function Header() {
           })}
           <div className="flex space-x-6 pt-4 text-3xl sm:text-4xl">
             <a href="#" className={`text-white hover:text-[${accentColorHex}]`}>
-              <Twitter size={28} />
+              <FaLinkedin size={28} />
             </a>
             <a href="#" className={`text-white hover:text-[${accentColorHex}]`}>
-              <Facebook size={28} />
+              <FaFacebook size={28} />
+            </a>
+            <a href="#" className={`text-white hover:text-[${accentColorHex}]`}>
+              <FaWhatsapp size={28} />
             </a>
           </div>
         </div>

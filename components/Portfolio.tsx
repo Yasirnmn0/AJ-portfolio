@@ -241,17 +241,25 @@ export default function Portfolio() {
     <section id="portfolio" className="relative py-20 bg-gray-800 text-white">
       <div className="container mx-auto px-4">
         {/* SECTION HEADER */}
-        <div className="relative text-center mb-12 flex items-center justify-center">
-          {/* Background big text */}
-          <h2 className="text-[50px] md:text-[100px] text-white/5 font-bold uppercase tracking-widest w-full">
-            Portfolio
-          </h2>
+        {/* SECTION HEADER */}
+        <div className="relative w-full text-center mb-12 pt-0">
+          {/* BACKGROUND BIG TEXT */}
+          <h3 className="text-[50px] md:text-[100px] font-bold text-white opacity-[0.04] uppercase tracking-wider select-none">
+            portfolio
+          </h3>
 
-          {/* Foreground heading */}
-          <p className="absolute text-4xl md:text-5xl font-bold text-white">
-            My Work
-            <span className="block w-24 h-[3px] mt-2 mx-auto bg-[#20C997]"></span>
-          </p>
+          {/* FOREGROUND TITLE */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center">
+            <h2 className="text-3xl md:text-4xl font-semibold text-white">
+              My Work
+            </h2>
+
+            {/* Underline */}
+            <div
+              className="w-20 h-[3px] mt-2 rounded-full"
+              style={{ backgroundColor: accentColorHex }}
+            ></div>
+          </div>
         </div>
 
         <ul className="flex justify-center space-x-6 mb-12">
