@@ -42,16 +42,12 @@ export default function AnimatedTitle() {
     <span
       // 1. Font Size: Uses the fluid typography class defined in globals.css
       // 2. Font Weight: Updated to 'font-semibold' (600)
-      className="text-white text-fluid-16 font-semibold tracking-tight"
+      className="text-white text-fluid-16 font-semibold sm:text-sm md:text-lg tracking-tight"
     >
       I'm a <span className="">{currentText}</span>.
-      {/* Blinking Cursor - Adjust size to match the fluid text height */}
       <span
         className="inline-block w-2 bg-white align-middle ml-1 animate-pulse"
-        // Use style to ensure the cursor height scales with the text,
-        // or rely on the container's font size if the height utility is removed.
-        // Keeping the original cursor size logic for compatibility.
-        style={{ height: "1.2em" }} // Example: height relative to font size
+        style={{ height: "1.2em" }}
       ></span>
     </span>
   );

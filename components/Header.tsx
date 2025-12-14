@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import { FaFacebook, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 const navItems = [
@@ -71,23 +71,39 @@ export default function Header() {
 
         {/* Desktop Social Icons */}
         <div className="hidden lg:flex space-x-3 sm:space-x-4 md:space-x-5 text-white text-base sm:text-lg md:text-lg lg:text-xl xl:text-2xl">
-          <a href="#" className={`hover:text-[${accentColorHex}]`}>
-            <FaLinkedin
-              size={18}
-              className="sm:scale-100 md:scale-110 lg:scale-125"
-            />
+          <a
+            href="https://www.facebook.com/abdul.jabbar.3958"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#20C997]"
+          >
+            <FaFacebook size={24} />
           </a>
-          <a href="#" className={`hover:text-[${accentColorHex}]`}>
-            <FaFacebook
-              size={18}
-              className="sm:scale-100 md:scale-110 lg:scale-125"
-            />
+
+          <a
+            href="https://www.linkedin.com/in/abduljabbar1/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#20C997]"
+          >
+            <FaLinkedin size={24} />
           </a>
-          <a href="#" className={`hover:text-[${accentColorHex}]`}>
-            <FaWhatsapp
-              size={18}
-              className="sm:scale-100 md:scale-110 lg:scale-125"
-            />
+
+          <a
+            href="https://techrefi.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#20C997]"
+          >
+            <Globe size={24} />
+          </a>
+          <a
+            href="https://wa.me/923467999797"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-[#20C997]"
+          >
+            <FaWhatsapp size={24} />
           </a>
         </div>
 

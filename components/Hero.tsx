@@ -30,7 +30,7 @@ export default function Hero() {
         </span>
 
         {/* Location Text */}
-        <p className="text-white text-xl sm:text-2xl md:text-3xl font-medium mb-4 mt-0">
+        <p className="text-white text-sm sm:text-xl md:text-2xl lg:text-2xl xl:text-2xl font-medium mb-4 mt-0">
           Senior Technology Leader in Cloud, AI, Retail ERP
         </p>
 

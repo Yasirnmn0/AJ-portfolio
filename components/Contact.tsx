@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Phone, Mail, Globe, Linkedin, FacebookIcon } from "lucide-react";
 import toast from "react-hot-toast";
+import { FaFacebook, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 export default function Contact() {
   const accentColorHex = "#20C997";
@@ -102,21 +103,21 @@ export default function Contact() {
 
               <div className="flex justify-center md:justify-start space-x-4 text-gray-400 text-xl">
                 <a
-                  href="https://facebook.com"
+                  href="https://www.facebook.com/abdul.jabbar.3958"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-[#20C997]"
                 >
-                  <FacebookIcon size={24} />
+                  <FaFacebook size={24} />
                 </a>
 
                 <a
-                  href="https://linkedin.com/in/abdul-jabbar-sadiq"
+                  href="https://www.linkedin.com/in/abduljabbar1/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-[#20C997]"
                 >
-                  <Linkedin size={24} />
+                  <FaLinkedin size={24} />
                 </a>
 
                 <a
@@ -126,6 +127,14 @@ export default function Contact() {
                   className="hover:text-[#20C997]"
                 >
                   <Globe size={24} />
+                </a>
+                <a
+                  href="https://wa.me/923467999797"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#20C997]"
+                >
+                  <FaWhatsapp size={24} />
                 </a>
               </div>
             </div>

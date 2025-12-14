@@ -5,7 +5,7 @@ import About from "../components/About";
 import Services from "@/components/Services";
 import Resume from "../components/Resume";
 import Portfolio from "../components/Portfolio";
-import Testimonials from "../components/Testimonials";
+// import Testimonials from "../components/Testimonials";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
@@ -50,11 +50,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="testimonials">
+        {/* <section id="testimonials">
           <div>
             <Testimonials />
           </div>
-        </section>
+        </section> */}
         <section id="contact ">
           <div>
             <Contact />
