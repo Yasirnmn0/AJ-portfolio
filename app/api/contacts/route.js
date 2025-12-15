@@ -1,5 +1,5 @@
 import dbConnect from "../../../lib/monogdb";
-import ContactAj from "../../../models/Contact";
+import Contact from "../../../models/Contact";
 import nodemailer from "nodemailer";
 
 export async function POST(req) {
@@ -8,7 +8,7 @@ export async function POST(req) {
 
     await dbConnect();
 
-    await ContactAj.create({
+    await Contact.create({
       name,
       email,
       message,
