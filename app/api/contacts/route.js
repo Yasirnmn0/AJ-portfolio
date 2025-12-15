@@ -1,5 +1,5 @@
-import dbConnect from "../../../lib/monogdb";
-import Contact from "../../../models/Contact";
+import dbConnect from "../../lib/monogdb";
+import Contact from "../../models/Contact";
 import nodemailer from "nodemailer";
 
 export async function POST(req) {
