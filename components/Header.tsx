@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Menu, X, Globe } from "lucide-react";
-import { FaFacebook, FaLinkedin, FaWhatsapp } from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaWhatsapp, FaGlobe } from "react-icons/fa";
 
 const navItems = [
   { name: "Home", href: "#home" },
@@ -95,7 +95,7 @@ export default function Header() {
             rel="noopener noreferrer"
             className="hover:text-[#20C997]"
           >
-            <Globe size={24} />
+            <FaGlobe size={24} />
           </a>
           <a
             href="https://wa.me/923467999797"

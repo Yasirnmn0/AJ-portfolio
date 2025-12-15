@@ -73,14 +73,14 @@ export default function Contact() {
               <h3 className="text-2xl text-white font-semibold uppercase mb-4">
                 Address
               </h3>
-              <p className="text-gray-400 mb-1">Johar Town</p>
+              <p className="text-gray-400 mb-1">Officers Colony</p>
               <p className="text-gray-400 mb-1">Lahore, Punjab</p>
               <p className="text-gray-400 mb-4">Pakistan</p>
 
               <div className="space-y-3">
                 <p className="flex items-center justify-center md:justify-start text-gray-400">
                   <Phone size={20} className="text-[#20C997] mr-2" />
-                  +92 322 4722040
+                  +92 346 7999797
                 </p>
 
                 <p className="flex items-center justify-center md:justify-start text-gray-400">

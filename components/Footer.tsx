@@ -8,12 +8,12 @@ export default function Footer() {
           {/* Left Column */}
           <div className="text-center lg:text-left mb-4 lg:mb-0">
             <p>
-              Copyright © 2022{" "}
+              Copyright © 2026{" "}
               <a
                 href="#"
                 className="text-white font-medium hover:text-[#1CD7A8]"
               >
-                Simone
+                abduljabbar
               </a>
               . All Rights Reserved.
             </p>
